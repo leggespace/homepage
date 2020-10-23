@@ -339,7 +339,7 @@ a:hover, a:focus {
 }
 
 p {
-    color: #8c9398;
+    color: #4c5358;
     word-spacing: 1px;
     line-height: 25px;
     font-size: 14px;
@@ -357,8 +357,7 @@ h2 span {
     display: block;
     text-transform: initial;
     font-weight: initial;
-    color: #8c9398;
-
+    color: #4c5358;
 }
 
 h2::after {
@@ -521,7 +520,6 @@ Features
 Team
 ========================================================================== */
 .team-member {
-    width: 300px;
     border-radius: 50%;
 }
 

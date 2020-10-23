@@ -4,15 +4,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Providing consultancy services focused on providing you with the right information, at the right time.">
   <title>LeggeSpace Consultancy</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link href="dist/style.css" rel="stylesheet">
+  <!--
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome-4.1.0.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/queries.css" rel="stylesheet">
   <link href="css/animate.css" rel="stylesheet">
+  -->
 </head>
 <body id="top">
 <header id="home">
@@ -75,15 +79,15 @@
             <div class="icon">
               <i class="fa fa-code shadow"></i>
             </div>
-            <h2>Custom Built Software</h2>
+            <h2>Software Integrations</h2>
             <p>
               Integrating standalone systems and providing your users and employees custom, business specific
               applications,
               might feel like daunting task.
               With experience building integrations for both business and nonprofit organizations,
               the software you might need will not be to big or too small.
-              When you application is completed,
-              we can offer future support to adapt to new business requirements might change over time.
+              After you application is deployed,
+              we can offer future support to adapt to the business requirements might change over time.
             </p>
           </div>
           <div class="col-md-4 waypoint delay-1s" id="waypoint-4">
@@ -94,9 +98,8 @@
             <p>
               With experience leading smaller teams,
               we can help guide your developers and ensure they have the resources they need, when they need them.
-              If you need help preparing an executing a pilot study to evaluate the feasibility of a project,
-              writing a project plan or a project manager during the project,
-              we focus on giving your project every chance to succeed.
+              From preparing pilot studies to managing projects already in the progress,
+              our goal is to giving you and your projects the greatest possible chance to succeed.
             </p>
           </div>
           <div class="clearfix"></div>
@@ -106,7 +109,7 @@
   </div>
 </section>
 <section class="dark-bg team text-center section-padding" id="team">
-  <div class="container">
+  <div class="container waypoint" id="waypoint-5">
     <div class="row">
       <div class="col-md-12">
         <h1 class="arrow">Currently a one person venture, with the goal of expanding</h1>
@@ -116,8 +119,8 @@
       <div class="team-wrapper">
         <div id="teamSlider">
           <ul class="slides">
-            <div class="col-md-12 waypoint" id="waypoint-5">
-              <img class="team-member" src="img/team-01.jpg" alt="Team Member">
+            <div class="col-md-12">
+              <img class="team-member" width="300" height="300" src="img/team-01.jpg" loading="lazy" alt="Team Member">
               <h2>
                 Rikard Legge
                 <span>CEO and founder of LeggeSpace AB</span>
@@ -131,9 +134,9 @@
                 existing
                 infrastructure.
                 A small established business might only need a node running on a hosted server while an enterprise might
-                instead require an infinitely scalable multi continent deployment to keep up with business needs.
-                All project comes with their limitations which do not have to be seen as restrictions but instead
-                possibilities to engineer a tailor made solution which are unique for each and every situation.
+                instead require an globally scalable multi-continent deployment to keep up with business needs.
+                All project comes with their limitations, which do not have to be seen as restrictions but instead
+                possibilities to engineer the best possible solution for each buissness need.
               </p>
               <div class="social">
                 <ul class="social-buttons">
@@ -150,7 +153,7 @@
   </div>
 </section>
 <section class="text-center section-padding contact-wrap" id="contact">
-  <div class="container">
+  <div class="container waypoint" id="waypoint-6">
     <div class="row">
       <div class="col-md-12">
         <h1 class="arrow">Get in touch</h1>
@@ -158,19 +161,19 @@
     </div>
     <div class="row contact-details">
       <div class="col-xs-4">
-        <div class="light-box box-hover">
+        <div class="light-box">
           <h2><i class="fa fa-map-marker"></i><span>Address</span></h2>
-          <p>Gothenburg, Sweden</p>
+          <p><a href="https://www.google.com/maps/place/Gothenburg">Gothenburg, Sweden</a></p>
         </div>
       </div>
       <div class="col-xs-4">
-        <div class="light-box box-hover">
+        <div class="light-box">
           <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
           <p><a href="tel:+46702005536">(+46)70-200 5536</a></p>
         </div>
       </div>
       <div class="col-xs-4">
-        <div class="light-box box-hover">
+        <div class="light-box">
           <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
           <p><a href="mailto:rikard@leggespace.com">rikard@leggespace.com</a></p>
         </div>
@@ -178,6 +181,43 @@
     </div>
   </div>
 </section>
+<script>
+  if(typeof(IntersectionObserver) !== "undefined") {
+    document.querySelectorAll(".waypoint")
+      .forEach(element => element.classList.add("waypoint-hidden"));
+
+    waypoint('#waypoint-1', 'fadeInLeft', 0.75);
+    waypoint('#waypoint-2', 'fadeInUp', 0);
+    waypoint('#waypoint-3', 'fadeInUp', 0);
+    waypoint('#waypoint-4', 'fadeInUp', 0);
+    waypoint('#waypoint-5', 'fadeInLeft', 0.5);
+    waypoint('#waypoint-6', 'fadeInUp', 0);
+  }
+
+  function waypoint(selector, animation, offset) {
+    const options = {
+      threshold: [offset],
+    };
+    respondToVisibility(selector, (element) => {
+      element.classList.add('animated');
+      element.classList.remove('waypoint-hidden');
+      element.classList.add(animation);
+    }, options);
+  }
+
+  function respondToVisibility(selector, callback, options) {
+    const element = document.querySelector(selector);
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          callback(element);
+        }
+      });
+    }, options);
+
+    observer.observe(element);
+  }
+</script>
 </body>
-<script src="scripts.js"></script>
 </html>

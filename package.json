@@ -1,0 +1,21 @@
+{
+  "name": "leggespace-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "build": "purifycss css/*.css index.html --min --info --out dist/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leggespace/leggespace.git"
+  },
+  "author": "Rikard Legge",
+  "bugs": {
+    "url": "https://github.com/leggespace/leggespace/issues"
+  },
+  "homepage": "https://www.leggespace.se",
+  "devDependencies": {
+    "purify-css": "^1.2.5"
+  }
+}
