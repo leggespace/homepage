@@ -1,3 +1,4 @@
+
 /* ==========================================================================
 Base
 ========================================================================== */
@@ -440,8 +441,7 @@ Hero
 }
 
 .hero {
-    background: url('../img/header.jpg') no-repeat center center;
-    background-color: black;
+    background: black url('../img/header.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

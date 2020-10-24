@@ -1,10 +1,12 @@
 {
   "name": "leggespace-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "Homepage",
+  "private": true,
   "main": "index.html",
   "scripts": {
-    "build": "purifycss css/*.css index.html --min --info --out dist/style.css"
+    "watch": "bin/watch",
+    "build": "bin/build"
   },
   "repository": {
     "type": "git",
@@ -16,6 +18,13 @@
   },
   "homepage": "https://www.leggespace.se",
   "devDependencies": {
-    "purify-css": "^1.2.5"
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-clean-dist": "0.0.6",
+    "parcel-plugin-imagemin": "^4.0.1",
+    "parcel-plugin-purifycss": "^1.0.5"
+  },
+  "dependencies": {
+    "bootstrap": "^3",
+    "font-awesome": "^4.7.0"
   }
 }
