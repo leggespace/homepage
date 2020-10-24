@@ -4,14 +4,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="Providing consultancy services focused on providing you with the right information, at the right time.">
+  <meta name="description" content="Providing consultancy services focused on providing you with the right information, at the right time.">
   <title>LeggeSpace Consultancy</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link href="styles.css" rel="stylesheet">
-</head>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.43b30f10.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.f04b0db9.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.442c5440.png">
+  <link href="/styles.8986bff4.css" rel="stylesheet">
+<script src="/styles.8986bff4.js"></script></head>
 <body id="top">
 <header id="home">
   <section class="hero" id="hero">
@@ -113,7 +112,7 @@
       <div class="team-wrapper waypoint" id="waypoint-5">
         <div id="teamSlider">
           <div class="col-md-12">
-            <img class="team-member" width="300" height="300" src="img/team-01.jpg" alt="Team Member">
+            <img class="team-member" width="300" height="300" src="/team-01.2fc68119.jpg" alt="Team Member">
             <h2>
               Rikard Legge
               <span>CEO and founder of LeggeSpace AB</span>
@@ -134,8 +133,7 @@
             <div class="social">
               <ul class="social-buttons">
                 <li><a href="https://github.com/rikardlegge/" class="social-btn"><i class="fa fa-github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/rikardlegge/" class="social-btn"><i
-                            class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/rikardlegge/" class="social-btn"><i class="fa fa-linkedin"></i></a></li>
               </ul>
             </div>
           </div>
@@ -173,42 +171,38 @@
     </div>
   </div>
 </section>
-<script>
-  if (typeof (IntersectionObserver) !== "undefined") {
-    document.querySelectorAll(".waypoint")
-      .forEach(element => element.classList.add("waypoint-hidden"));
+<script>if (typeof IntersectionObserver !== "undefined") {
+  document.querySelectorAll(".waypoint").forEach(function (element) {
+    return element.classList.add("waypoint-hidden");
+  });
+  waypoint('#waypoint-1', 'fadeInLeft', 0);
+  waypoint('#waypoint-2', 'fadeInLeft', 0.4);
+  waypoint('#waypoint-3', 'fadeInLeft', 0.4);
+  waypoint('#waypoint-4', 'fadeInLeft', 0.4);
+  waypoint('#waypoint-5', 'fadeInLeft', 0.4);
+}
 
-    waypoint('#waypoint-1', 'fadeInLeft', 0);
-    waypoint('#waypoint-2', 'fadeInLeft', 0.4);
-    waypoint('#waypoint-3', 'fadeInLeft', 0.4);
-    waypoint('#waypoint-4', 'fadeInLeft', 0.4);
-    waypoint('#waypoint-5', 'fadeInLeft', 0.4);
-  }
+function waypoint(selector, animation, offset) {
+  var options = {
+    threshold: [offset]
+  };
+  respondToVisibility(selector, function (element) {
+    element.classList.add('animated');
+    element.classList.remove('waypoint-hidden');
+    element.classList.add(animation);
+  }, options);
+}
 
-  function waypoint(selector, animation, offset) {
-    const options = {
-      threshold: [offset],
-    };
-    respondToVisibility(selector, (element) => {
-      element.classList.add('animated');
-      element.classList.remove('waypoint-hidden');
-      element.classList.add(animation);
-    }, options);
-  }
-
-  function respondToVisibility(selector, callback, options) {
-    const element = document.querySelector(selector);
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio > 0) {
-          callback(element);
-        }
-      });
-    }, options);
-
-    observer.observe(element);
-  }
-</script>
+function respondToVisibility(selector, callback, options) {
+  var element = document.querySelector(selector);
+  var observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.intersectionRatio > 0) {
+        callback(element);
+      }
+    });
+  }, options);
+  observer.observe(element);
+}</script>
 </body>
 </html>
