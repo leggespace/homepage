@@ -1,4 +1,3 @@
 #!/bin/bash
-node_modules/.bin/parcel build src/index.html --public-url /dist
+node_modules/.bin/parcel build src/index.html --no-cache --no-source-maps --public-url /dist
 mv dist/index.html index.html
-rm dist/*.map
