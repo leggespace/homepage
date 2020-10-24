@@ -19,10 +19,10 @@
         <div class="col-md-12 text-center inner root">
           <div class="hero-text">
             <h1 class="animated fadeInDown orange">Legge<span class="gray">Space</span></h1>
-            <p class="animated fadeInUp delay-05s gray"><span class="orange">Streamline</span> your workflows</p>
-            <p class="animated fadeInUp delay-1s gray"><span class="orange">Automate</span> manual, error prone
+            <p class="animated fadeInLeft delay-05s gray"><span class="orange">Streamline</span> your workflows</p>
+            <p class="animated fadeInLeft delay-1s gray"><span class="orange">Automate</span> manual, error prone
               processes</p>
-            <p class="animated fadeInUp delay-15s gray"><span class="orange">Tailor made</span> solutions to help you
+            <p class="animated fadeInLeft delay-15s gray"><span class="orange">Tailor made</span> solutions to help you
               get more done</p>
           </div>
         </div>
@@ -33,9 +33,9 @@
 <section class="intro text-center section-padding" id="intro">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 waypoint" id="waypoint-1">
+      <div class="col-md-12">
         <h1 class="arrow">Our goal</h1>
-        <p>
+        <p  class="waypoint" id="waypoint-1">
           LeggeSpace is founded on the idea that people enjoy being challenged in their work.
           The problem is that we today spend hours upon hours on manually entering and reading
           out data from systems not tailored to your workflows.
@@ -64,7 +64,7 @@
               we provide the knowledge and man power.
               With many years of experience within the Swedish IT-sector,
               we can help support you in developing your next cloud applications.
-              A cloud application is of course not complete without a way for user to interact with it,
+              A cloud application is of course not complete without a way for users to interact with it,
               luckily enough we also have experience building web, mobile and desktop applications.
             </p>
           </div>
@@ -102,14 +102,14 @@
   </div>
 </section>
 <section class="dark-bg team text-center section-padding" id="team">
-  <div class="container waypoint" id="waypoint-5">
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
         <h1 class="arrow">Currently a one person venture, with the goal of expanding</h1>
       </div>
     </div>
     <div class="row">
-      <div class="team-wrapper">
+      <div class="team-wrapper waypoint" id="waypoint-5">
         <div id="teamSlider">
           <ul class="slides">
             <div class="col-md-12">
@@ -146,7 +146,7 @@
   </div>
 </section>
 <section class="text-center section-padding contact-wrap" id="contact">
-  <div class="container waypoint" id="waypoint-6">
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
         <h1 class="arrow">Get in touch</h1>
@@ -179,12 +179,11 @@
     document.querySelectorAll(".waypoint")
       .forEach(element => element.classList.add("waypoint-hidden"));
 
-    waypoint('#waypoint-1', 'fadeInLeft', 0.75);
-    waypoint('#waypoint-2', 'fadeInUp', 0);
-    waypoint('#waypoint-3', 'fadeInUp', 0);
-    waypoint('#waypoint-4', 'fadeInUp', 0);
-    waypoint('#waypoint-5', 'fadeInLeft', 0.5);
-    waypoint('#waypoint-6', 'fadeInUp', 0);
+    waypoint('#waypoint-1', 'fadeInLeft', 0);
+    waypoint('#waypoint-2', 'fadeInLeft', 0.4);
+    waypoint('#waypoint-3', 'fadeInLeft', 0.4);
+    waypoint('#waypoint-4', 'fadeInLeft', 0.4);
+    waypoint('#waypoint-5', 'fadeInLeft', 0.4);
   }
 
   function waypoint(selector, animation, offset) {
