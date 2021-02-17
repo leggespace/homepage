@@ -181,15 +181,37 @@
   </div>
 </section>
 <script>
-  setTimeout(createWaypoints, 100);
+  function once(callback) {
+    var fn = function() {
+      if(fn.called) {
+        return;
+      }
+      fn.toCancel.forEach(f => f());
+      fn.called = true;
+      callback();
+    };
+    fn.called = false;
+    fn.toCancel = [];
+    fn.onCalled = function(cb) {
+      fn.toCancel.push(cb);
+    }
+    return fn;
+  }
+
+  var init = once(createWaypoints);
+  var timeoutHandle = setTimeout(init, 500);
+  init.onCalled(()=>clearTimeout(timeoutHandle));
+  document.addEventListener('scroll', init);
+  init.onCalled(()=>document.removeEventListener('scroll', init));
 
   function createWaypoints() {
     if (typeof (IntersectionObserver) !== "undefined") {
       document.querySelectorAll(".waypoint")
         .forEach(function(element) {
-          if(!hasScrolledPassed(element)) {
-            element.classList.add("waypoint-hidden")
+          if(hasScrolledPassed(element)) {
+            return;
           }
+          element.classList.add("waypoint-hidden")
         });
 
       waypoint('#waypoint-1', 'fadeInLeft', 0);
@@ -202,7 +224,6 @@
 
   function hasScrolledPassed(element) {
     var rect = element.getBoundingClientRect();
-    console.log(rect);
     return rect.bottom < 0;
   }
 
