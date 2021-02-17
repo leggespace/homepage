@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+node_modules/.bin/parcel build src/index.html --no-cache --no-source-maps --public-url /
+cp CNAME dist/CNAME
+git add dist/*
+git subtree push --prefix dist origin gh-pages
+rm -rf dist
