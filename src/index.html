@@ -159,19 +159,19 @@
       </div>
     </div>
     <div class="row contact-details">
-      <div class="col-xs-4">
+      <div class="col-xs-4" style="padding: 5px 0;">
         <div class="light-box">
           <h2><i class="fa fa-map-marker"></i><span>Address</span></h2>
           <p><a href="https://www.google.com/maps/place/Gothenburg">Gothenburg, Sweden</a></p>
         </div>
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-4" style="padding: 5px 0;">
         <div class="light-box">
           <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
           <p><a href="tel:+46702005536">(+46)70-200 5536</a></p>
         </div>
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-4" style="padding: 5px 0;">
         <div class="light-box">
           <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
           <p><a href="mailto:rikard@leggespace.se">rikard@leggespace.se</a></p>
@@ -181,18 +181,37 @@
   </div>
 </section>
 <script>
-  if (typeof (IntersectionObserver) !== "undefined") {
-    document.querySelectorAll(".waypoint")
-      .forEach(element => element.classList.add("waypoint-hidden"));
+  setTimeout(createWaypoints, 100);
 
-    waypoint('#waypoint-1', 'fadeInLeft', 0);
-    waypoint('#waypoint-2', 'fadeInLeft', 0.4);
-    waypoint('#waypoint-3', 'fadeInLeft', 0.4);
-    waypoint('#waypoint-4', 'fadeInLeft', 0.4);
-    waypoint('#waypoint-5', 'fadeInLeft', 0.4);
+  function createWaypoints() {
+    if (typeof (IntersectionObserver) !== "undefined") {
+      document.querySelectorAll(".waypoint")
+        .forEach(function(element) {
+          if(!hasScrolledPassed(element)) {
+            element.classList.add("waypoint-hidden")
+          }
+        });
+
+      waypoint('#waypoint-1', 'fadeInLeft', 0);
+      waypoint('#waypoint-2', 'fadeInLeft', 0.4);
+      waypoint('#waypoint-3', 'fadeInLeft', 0.4);
+      waypoint('#waypoint-4', 'fadeInLeft', 0.4);
+      waypoint('#waypoint-5', 'fadeInLeft', 0.4);
+    }
+  }
+
+  function hasScrolledPassed(element) {
+    var rect = element.getBoundingClientRect();
+    console.log(rect);
+    return rect.bottom < 0;
   }
 
   function waypoint(selector, animation, offset) {
+    var element = document.querySelector(selector);
+    if(hasScrolledPassed(element)) {
+      return;
+    }
+
     const options = {
       threshold: [offset],
     };

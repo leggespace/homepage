@@ -15,6 +15,10 @@ Base
     color: #313930;
 }
 
+body, html {
+    overflow-x: hidden;
+}
+
 html {
     font-size: 100%; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
@@ -366,7 +370,7 @@ h2::after {
     border: solid 2px #DB6E00;
     display: block;
     width: 35px;
-    margin: 25px auto;
+    margin: 10px auto;
 }
 
 .section-padding {
@@ -390,16 +394,16 @@ h2::after {
 
 .light-box {
     background-color: #fff;
-    -webkit-box-shadow: 0px 3px 0px 0px #f0f2f4;
-    -moz-box-shadow: 0px 3px 0px 0px #f0f2f4;
-    box-shadow: 0px 3px 0px 0px #f0f2f4;
-    padding: 20px 0;
+    /*-webkit-box-shadow: 0px 3px 0px 0px #f0f2f4;*/
+    /*-moz-box-shadow: 0px 3px 0px 0px #f0f2f4;*/
+    /*box-shadow: 0px 3px 0px 0px #f0f2f4;*/
+    padding: 5px 0;
 }
 
 .light-box:hover, .light-box:focus {
-    -webkit-box-shadow: 0px 3px 0px 0px #DB6E00;
-    -moz-box-shadow: 0px 3px 0px 0px #DB6E00;
-    box-shadow: 0px 3px 0px 0px #DB6E00;
+    /*-webkit-box-shadow: 0px 3px 0px 0px #DB6E00;*/
+    /*-moz-box-shadow: 0px 3px 0px 0px #DB6E00;*/
+    /*box-shadow: 0px 3px 0px 0px #DB6E00;*/
 }
 
 .box-hover {
