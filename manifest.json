@@ -1,0 +1,32 @@
+{
+  "name": "LeggeSpace Homepage",
+  "short_name": "LeggeSpace",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1A1A1A",
+  "theme_color": "#FF8D1A",
+  "description": "IT consulting focused on providing you with the right information, at the right time",
+  "icons": [
+    {
+      "src": "favicon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
