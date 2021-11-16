@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+          content="Providing consultancy services focused on providing you with the right information, at the right time.">
+    <title>LeggeSpace Consultancy</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png">
+    <style>
+        body, html {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 100%; /* 1 */
+            -webkit-text-size-adjust: 100%; /* 2 */
+            -ms-text-size-adjust: 100%; /* 2 */
+        }
+
+        html, html a {
+            -webkit-font-smoothing: antialiased;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+            color: white;
+        }
+
+        /* * Addresses `font-family` inconsistency between `textarea` and other form
+        * elements. */
+        html, button, input, select, textarea {
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        /* * Addresses margins handled incorrectly in IE 6/7. */
+        body {
+            font-family: Avenir, sans-serif;
+            width: 100vw;
+            height: 100vh;
+            background: #1A1A1A;
+            color: white;
+            text-align: justify;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-top: 5px;
+        }
+
+        section {
+            height: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .orange {
+            color: #FF8D1A;
+        }
+
+        .grid-container {
+            display: grid;
+            min-height: 100%;
+            margin: auto 1vw;
+        }
+
+        .grid-item {
+            padding: 20px;
+        }
+
+        .grid-about {
+            grid-area: about;
+        }
+
+        .grid-logo {
+            grid-area: logo;
+            min-width: 33vw;
+            text-align: center;
+            align-self: end;
+        }
+
+        .grid-logo h1 {
+            letter-spacing: 12px;
+        }
+
+        .grid-contacts {
+            grid-area: contacts;
+            text-align: center;
+        }
+
+        .grid-services {
+            grid-area: services;
+        }
+
+        .grid-container {
+            grid-template-areas:
+                'about logo services'
+                'about contacts services';
+            align-items: center;
+        }
+
+        @media only screen and (max-device-width: 1200px) {
+            .grid-container {
+                grid-template-areas:
+                  'logo logo'
+                  'about services'
+                  'contacts contacts';
+                align-items: baseline;
+            }
+        }
+
+        @media only screen and (max-device-width: 768px) {
+            .grid-container {
+                grid-template-areas:
+                  'logo'
+                  'about'
+                  'services'
+                  'contacts';
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="grid-container">
+    <div class="grid-item grid-about">
+        <section id="about">
+            <h1>We are</h1>
+
+            <h2>Currently a one person venture, with the goal of expanding</h2>
+            <p>With almost 10 years of experience within IT, I have found that almost all problems which might not be
+                solvable today, are solvable tomorrow. Working for startups, non-profit organizations, small established
+                businesses as well as larger enterprises has taught me the valuable lesson of adapting a solution to the
+                size of the client as well as the existing infrastructure. All project comes with their limitations,
+                which do not have to be seen as restrictions but instead possibilities to engineer the best possible
+                solution for each business need.</p>
+
+            <h2>Our goal</h2>
+            <p>LeggeSpace is founded on the idea that people enjoy being challenged in their work. The problem is that
+                we today spend hours upon hours on manually entering and reading out data from systems not tailored to
+                your workflows. This time could instead be used for innovation or solving business critical issues.
+                Providing you and your employees with the right information, at the right time, to allows you to focus
+                on what you do best and grow your business.</p>
+        </section>
+    </div>
+    <div class="grid-item grid-logo">
+        <section id="logo">
+            <div>
+                <img src="logo-small.png" width="100" alt="LeggeSpace AB logo">
+                <h1 class="orange">Legge<span class="white">Space</span></h1>
+                <p class="white"><span class="orange">Streamline</span> your
+                    workflows</p>
+                <p class="white"><span class="orange">Automate</span> manual,
+                    error-prone
+                    processes</p>
+                <p class="white"><span class="orange">Tailor-made</span> solutions
+                    to help you
+                    get more done</p>
+            </div>
+        </section>
+    </div>
+    <div class="grid-item grid-contacts">
+        <section id="contact">
+            <h1>Contact</h1>
+            <p><a href="https://www.google.com/maps/place/Gothenburg">Gothenburg, Sweden</a></p>
+            <p><a href="tel:+46702005536">(+46)70-200 5536</a></p>
+            <p><a href="mailto:rikard@leggespace.se">rikard@leggespace.se</a></p>
+
+            <p><a href="https://www.linkedin.com/in/rikardlegge/">LinkedIn</a></p>
+            <p><a href="https://github.com/RikardLegge/">Github</a></p>
+        </section>
+    </div>
+    <div class="grid-item grid-services">
+        <section id="services">
+            <h1>We provide</h1>
+
+            <h2>IT Consulting</h2>
+            <p>IT consulting services for projects of all size. It does not matter if you need an hour of consultation
+                or a temporary addition up your team, we provide the knowledge and man power. With many years of
+                experience within the Swedish IT-sector, we can help support you in developing your next cloud
+                applications. A cloud application is of course not complete without a way for users to interact with it,
+                luckily enough we also have experience building web, mobile and desktop applications. </p>
+
+            <h2>Software Integrations</h2>
+            <p>Integrating standalone systems and providing your users and employees custom, business specific
+                applications, might feel like daunting task. With experience building integrations for both business and
+                nonprofit organizations, the software you might need will not be to big or too small. After you
+                application is deployed, we can offer future support to adapt to the business requirements might change
+                over time. </p>
+
+            <h2>Project Management</h2>
+            <p>With experience leading smaller teams, we can help guide your developers and ensure they have the
+                resources they need, when they need them. From preparing pilot studies to managing projects already in
+                the progress, our goal is to giving you and your projects the greatest possible chance to succeed.</p>
+
+        </section>
+    </div>
+</div>
+</body>
+</html>
