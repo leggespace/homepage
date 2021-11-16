@@ -7,12 +7,30 @@ Base
 * 2. Prevents iOS text size adjust after orientation change, without disabling
 *    user zoom. */
 
+canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#home {
+    position: relative;
+}
+
 .orange {
-    color: #DB6E00;
+    color: #FF8D1A;
 }
 
 .gray {
     color: #313930;
+}
+
+.gray-bkg {
+    background: #1A1A1A;
+}
+
+.white {
+    color: white;
 }
 
 body, html {
@@ -344,7 +362,7 @@ a:hover, a:focus {
 }
 
 p {
-    color: #4c5358;
+    /*color: #4c5358;*/
     word-spacing: 1px;
     line-height: 25px;
     font-size: 14px;
@@ -428,7 +446,7 @@ h2::after {
 }
 
 .inner {
-    padding-top: 170px;
+    padding-top: 20px;
 }
 
 /* ==========================================================================
@@ -440,17 +458,19 @@ Hero
 
 .hero-text {
     padding: 10px 0;
-    background-color: rgba(255,255,255,0.98);
+    /*background-color: rgba(255,255,255,0.98);*/
     border-radius: 5px;
 }
 
+.hero-container {
+    /*padding: 65px 0 300px 0;*/
+}
+
 .hero {
-    background: black url('../img/header.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    padding: 65px 0 300px 0;
     height: auto;
 }
 
@@ -590,8 +610,6 @@ Contact
     top: -26px;
     left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .up-btn:hover, up-btn:focus {
